@@ -212,7 +212,22 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 20,
                       ),
                     ),
-                    onPressed: (null)),
+                    onPressed: () {
+                      return showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          title: Text("Payment Successful"),
+                          actions: <Widget>[
+                            FlatButton(
+                              onPressed: () {
+                                Navigator.of(ctx).pop();
+                              },
+                              child: Text("okay"),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
               ),
             ],
           ),
